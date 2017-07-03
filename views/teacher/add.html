@@ -35,25 +35,28 @@
                 <div class="teacher-add">
                     <form action="" id="teacherform" class="form-horizontal col-xs-offset-2">
                         <input type="hidden" name="tc_id" value="{{tc_id}}">
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label for="" class="col-xs-3 control-label">姓名</label>
                             <div class="col-xs-4">
-                                <input type="text" name="tc_name" value="{{tc_name}}" class="form-control input-sm" placeholder="讲师名称">
+                                <input type="text" data-required  data-describedby="username" data-description="tcname" name="tc_name" value="{{tc_name}}" class="form-control input-sm" placeholder="讲师名称">
                             </div>
+                            <label id="username" class="control-label hide" >提示错误的信息</label>
                         </div>
                         {{if !tc_id}}
                         <div class="form-group">
                             <label for="" class="col-xs-3 control-label">密码</label>
                             <div class="col-xs-4">
-                                <input type="password" name="tc_pass" class="form-control input-sm">
+                                <input type="password" data-required data-describedby ="userpass" data-description="tcpass" name="tc_pass" class="form-control input-sm">
                             </div>
+                            <label id="userpass" class="control-label hide" >提示错误的信息</label>
                         </div>
                         {{/if}}
                         <div class="form-group">
                             <label for="" class="col-xs-3 control-label">入职时间</label>
                             <div class="col-xs-4">
-                                <input type="text" name="tc_join_date" value="{{tc_join_date}}" class="form-control input-sm">
+                                <input type="text" id="tcoindate" data-required data-describedby="joindata" data-description="tctime"name="tc_join_date" value="{{tc_join_date}}" class="form-control input-sm">
                             </div>
+                            <label id="joindata" class="control-label hide" >提示错误的信息</label>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-xs-3 control-label">类型</label>
@@ -68,10 +71,10 @@
                             <label for="" class="col-xs-3 control-label">性别</label>
                             <div class="col-xs-4">
                                 <label class="radio-inline">
-                                    <input type="radio" name="tc_gender" checked {{if tc_gender=="1"}}checked{{/if}}> 男
+                                    <input type="radio" name="tc_gender" value=0 {{if tc_gender=="0"}}checked{{/if}}> 男
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio"  name="tc_gender" {{if tc_gender=="1"}}checked{{/if}}> 女
+                                    <input type="radio"  name="tc_gender" value=1 {{if tc_gender=="1"}}checked{{/if}}> 女
                                 </label>
                             </div>
                         </div>
